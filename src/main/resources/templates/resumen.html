@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form method="post" th:action="@{/inicio/resumen}" th:object="${cobertura}">
+        <h1>Tipo Coberturas</h1>
+        <select th:field="*{tipoCobertura}">
+            <option value="terceros">Terceros</option>
+            <option value="terceros_lunas">Terceros con luna</option>
+            <option value="todo_riesgo">Todo riesgo</option>
+        </select>
+
+        <br/>
+        <h1>Assitencia en carretera</h1>
+        <input type="checkbox" th:field="*{asistencia}">
+
+        <br/>
+        <h1>Vehiculo de sustitucion</h1>
+        <input type="checkbox" th:field="*{vehSustitucion}">
+
+        <br/>
+        <button type="submit">Aceptar</button>
+        <a th:href="@{/inicio/vehiculo}"><button>Volver</button></a>
+    </form>
+
+    <h1>Resumen</h1>
+    <div th:if="${cotizacionDTO != null}">
+        <h2>Conductor</h2>
+        <p>Nombre: <span th:text="${cotizacionDTO.conductor.nombre}"></span></p>
+        <p>Edad: <span th:text="${cotizacionDTO.conductor.anios}"></span></p>
+        <p>Años antigüedad: <span th:text="${cotizacionDTO.conductor.aniosCarnet}"></span></p>
+        <br/>
+        <h2>Vehiculo</h2>
+        <p>Marca: <span th:text="${cotizacionDTO.coche.marca}"></span></p>
+        <p>Modelo: <span th:text="${cotizacionDTO.coche.modelo}"></span></p>
+        <p>Año: <span th:text="${cotizacionDTO.coche.anio}"></span></p>
+        <p>Uso: <span th:text="${cotizacionDTO.coche.uso}"></span></p>
+        <br/>
+        <h2>Cobertura</h2>
+        <p>Tipo: <span th:text="${cotizacionDTO.cobertura.tipoCobertura}"></span></p>
+        <p>Asistencia: <span th:text="${cotizacionDTO.cobertura.asistencia ? 'Si' : 'No'}"></span></p>
+        <p>Vehiculo Sustitucion: <span th:text="${cotizacionDTO.cobertura.vehSustitucion ? 'Si' : 'No'}"></span></p>
+        <br/>
+        <p>Precio Total: <span th:text="${cotizacionDTO.precioTotal}"></span>€</p>
+    </div>
+
+</body>
+</html>

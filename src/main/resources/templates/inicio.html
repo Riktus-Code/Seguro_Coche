@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" th:action="@{/inicio}" th:object="${conductor}">
+        <label>Nombre</label>
+        <input th:field="*{nombre}" type="text">
+        <br/>
+        <label>Edad</label>
+        <input th:field="*{anios}" type="text">
+        <br/>
+        <label>Antigüedad de carnet</label>
+        <input th:field="*{aniosCarnet}" type="text">
+        <br/>
+        <button type="submit">Aceptar</button>
+    </form>
+</body>
+</html>

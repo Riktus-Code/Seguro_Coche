@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form  method="post" th:action="@{/inicio/vehiculo}" th:object="${coche}">
+        <label>Marca</label>
+        <input th:field="*{marca}" type="text" >
+        <br/>
+        <label>Modelo</label>
+        <input th:field="*{modelo}" type="text" >
+        <br/>
+        <label>Año matriculación</label>
+        <input th:field="*{anio}" type="text" >
+        <br/>
+
+        <a th:href="@{/inicio}"><button>Anterior</button></a>
+        <button type="submit">Aceptar</button>
+
+    </form>
+</body>
+</html>
