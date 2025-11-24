@@ -1,5 +1,5 @@
 
-
+create database seguro_coche;
 create table cotizacion_seguro  (
 id BIGINT auto_increment primary key ,
     nombre varchar(255),
