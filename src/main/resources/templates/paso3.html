@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paso2</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  method="post" th:action="@{/seguros/calculos/cotizacion/paso3}" th:object="${cotizacionSeguro}">
+    <h1>Tipo Coberturas</h1>
+    <select th:field="*{tipoCobertura}">
+        <option value="terceros">Terceros</option>
+        <option value="terceros_lunas">Terceros con luna</option>
+        <option value="todo_riesgo">Todo riesgo</option>
+    </select>
+
+    <br/>
+    <h1>Assitencia en carretera</h1>
+    <input type="checkbox" th:field="*{asistencia}" value="true"><label>Si</label>
+    <input type="checkbox" th:field="*{asistencia}" value="false"><label>No</label>
+
+    <br/>
+    <h1>Vehiculo de sustitucion</h1>
+    <input type="checkbox" th:field="*{vehSustitucion}" value="true"><label>Si</label>
+    <input type="checkbox" th:field="*{vehSustitucion}" value="false"><label>No</label>
+
+    <br/>
+    <button type="submit">Aceptar</button>
+
+    <h1>Resumen</h1>
+
+    <h2>Conductor</h2>
+    <spam th:text="${datosConductor}"></spam>
+    <br/>
+    <h2>Vehiculo</h2>
+    <spam th:text="${datosVehiculo}"></spam>
+    <br/>
+    <h2>Cobertura</h2>
+    <spam th:text="${datosCobertura}"></spam>
+    <br/>
+    <p>Precio Total: <span th:text="${cotizacionSeguro.precioTotal}"></span>€</p>
+</form>
+
+
+
+<a href="/seguros/calculos/cotizacion/paso2" ><button type="button">Anterior</button></a>
+
+</body>
+</html>

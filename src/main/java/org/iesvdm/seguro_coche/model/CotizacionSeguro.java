@@ -22,6 +22,7 @@ public class CotizacionSeguro {
     private String modelo;
     private Integer anioMat;
     private String uso;
+    private String tipoCobertura;
     private boolean asistencia;
     private boolean vehSustitucion;
     private BigDecimal precioTotal;

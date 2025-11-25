@@ -5,8 +5,13 @@
     <title>Paso1</title>
 </head>
 <body>
-    <form method="post" th:action="@{/seguro/calculos/cotizacion/paso1}" th:object="${}" >
-
+    <form method="post" th:action="@{/seguros/calculos/cotizacion/paso2}" th:object="${cotizacionSeguro}" >
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" th:field="*{nombre}">
+        <label>Edad</label>
+        <input type="text" th:field="*{edad}">
+        <label>Antigüedad carnet</label>
+        <input type="text" th:field="*{aniosCarnet}">
         <button>Enviar</button>
     </form>
 </body>

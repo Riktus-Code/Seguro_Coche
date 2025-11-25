@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paso2</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  method="post" th:action="@{/seguros/calculos/cotizacion/paso3}" th:object="${cotizacionSeguro}">
+    <label for="marca">Marca</label>
+    <input id="marca" th:field="*{marca}" type="text" >
+    <br/>
+    <label for="modelo">Modelo</label>
+    <input id="modelo" th:field="*{modelo}" type="text" >
+    <br/>
+    <label for="anioMat">Año matriculación</label>
+    <input id="anioMat" th:field="*{anioMat}" type="text" >
+    <br/>
+    <label for="uso">Uso</label>
+    <input id="uso" th:field="*{uso}" type="radio" value="PRIVADO"> <label for="uso">PRIVADO</label>
+    <input id="uso1" th:field="*{uso}" type="radio" value="PROFESIONAL"> <label for="uso1">PROFESIONAL</label>
+
+    <a href="/seguros/calculos/cotizacion/paso1" ><button type="button">Anterior</button></a>
+    <button type="submit">Siguiente</button>
+
+</form>
+</body>
+</html>
